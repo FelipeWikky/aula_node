@@ -1,21 +1,22 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import cors from 'cors';
 
-import irpf from "./irpf";
+import { calculateExample, calculateGet, calculatePost } from './src/controllers/IrpfController';
 
 const app = express();
-app.use(cors());
+app.use( cors() );
+
+app.get('/', (req: Request, res: Response) => {
+	return res.send("Está funcional!");
+});
 
 app.get("/teste", (req, res) => res.send("Requisição (GET) de Teste ok!"));
 
-app.get("/irpf/example", (req, res) => res.json(irpf.calculateExample()));
+app.get("/irpf/example", calculateExample);
 
-app.get("/irpf/:value/:name", (req, res) => {
+app.get("/irpf/:value/:name", calculateGet);
 
-    const value = Number(req.params.value);
-    const name = req.params.name;
-
-    res.status(200).json(irpf.calculateThis(value, name));
-});
+//app.post('/irpf/:value/:name', calculatePost);
+app.post('/irpf', calculatePost);
 
 app.listen(3000, () => console.log("App rodando na porta 3000!"));
