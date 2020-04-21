@@ -8,7 +8,7 @@ export function calculateExample(req:Request, res:Response){
 } 
 
 export function calculateGet(req: Request, res: Response) {
-  console.log(req.params);
+  //console.log(req.params);
   const value = Number(req.params.value);
   const name = req.params.name;
 
@@ -19,5 +19,4 @@ export function calculateGet(req: Request, res: Response) {
 
 export function calculatePost(req: Request, res: Response) {
   console.log(req.body); 
-
 }

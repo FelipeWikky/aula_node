@@ -22,6 +22,7 @@ class IRPF {
         this.tabela.calcularIRPF(pagador);
         console.log('--------------------------');
         console.log("Cálculo de "+ pagador.nome);
+        console.log("Ganho Anual: ", pagador.ganhoAnual);
 
         console.log("Faixa Isento: ", pagador.valorFaixaIsento);
         console.log("Faixa 7.5%: ", pagador.valorFaixa075);
