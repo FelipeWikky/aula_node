@@ -1,7 +1,9 @@
 import express, { Request, Response } from "express";
 import cors from 'cors';
 
-import { calculateExample, calculateGet, calculatePost } from './src/controllers/IrpfController';
+import IrpfController from './src/controllers/IrpfController';
+import UserController from './src/controllers/UserController';
+import ProductController from './src/controllers/ProductController';
 
 const app = express();
 app.use( cors() );
@@ -13,11 +15,13 @@ app.get('/', (req: Request, res: Response) => {
 
 app.get("/teste", (req, res) => res.send("Requisição (GET) de Teste ok!"));
 
-app.get("/irpf/example", calculateExample);
+app.get("/irpf/example", IrpfController.calculateExample);
+app.get("/irpf/:value/:name", IrpfController.calculateGet);
+app.post('/irpf', IrpfController.calculatePost);
 
-app.post('/irpf', calculatePost);
+app.post('/user/customer/add', UserController.signUp);
+app.post('/user/login', UserController.signIn);
 
-app.get("/irpf/:value/:name", calculateGet);
-
+app.get('/product/list', ProductController.list);
 
 app.listen(3000, () => console.log("App rodando na porta 3000!"));
