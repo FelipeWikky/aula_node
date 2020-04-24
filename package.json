@@ -6,7 +6,8 @@
     "scripts": {
         "build": "rm -rf build && tsc",
         "prestart":"npm run build",
-        "start": "node build/index.js",
+        "start": "",
+        "poststart": "node build/index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
