@@ -4,15 +4,10 @@ class UserController {
   public signUp(req: Request, res: Response) {
     const { address, age, email, name, user:{password} } = req.body;
 
-    // console.log(address);
-    // console.log(age);
-    // console.log(email);
-    // console.log(name);
-    // console.log(password);
-
     res.status(200).json({
-      token:'25sd4sa56da1s'
+      token: '25sd4sa56da1s'
     });
+    //res.status(400).json({ status: 40, message:'Some wrong with the parameters'});
 
   }
 
