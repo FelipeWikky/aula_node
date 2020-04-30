@@ -2,7 +2,9 @@ import { Request, Response } from 'express';
 
 class UserController {
   public signUp(req: Request, res: Response) {
-    const { address, age, email, name, user:{password} } = req.body;
+    const { address, age, email, name, userPassword } = req.body;
+
+    console.log(req.body);
 
     res.status(200).json({
       token: '25sd4sa56da1s'
