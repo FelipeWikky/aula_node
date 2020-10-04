@@ -24,4 +24,4 @@ app.post('/user/login', UserController.signIn);
 
 app.get('/product/list', ProductController.list);
 
-app.listen(3000, () => console.log("App rodando na porta 3000!"));
+app.listen(3005, () => console.log("App rodando na porta 3005!"));

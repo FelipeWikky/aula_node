@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 
 class UserController {
   public signUp(req: Request, res: Response) {
-    const { address, age, email, name, userPassword } = req.body;
+    //const { address, age, email, name, userPassword } = req.body;
 
     console.log(req.body);
 
